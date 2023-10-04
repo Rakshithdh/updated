@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain App</title>
+    <style>
+        /* Your existing CSS styles */
+        /* ... (your existing styles) */
+        body {
+                font-family: Arial, sans-serif;
+                background: linear-gradient(45deg, #000 0%, #222 100%);
+                color: #fff;
+                margin: 0;
+                padding: 0;
+            }
+            h1 {
+                color: #00eaff	;
+                text-align: center;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            form {
+                background: rgba(0, 0, 0, 0.6);
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+            label {
+                font-weight: bold;
+                color: #00eaff	;
+            }
+            input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #00eaff	;
+                border-radius: 5px;
+                background: rgba(0, 0, 0, 0.7);
+                color: #fff;
+            }
+            input[type="submit"] {
+                background: linear-gradient(45deg, #00eaff	 0%, #00eaff	 100%);
+                color: #000000;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: background-color 0.3s ease-in-out;
+                
+            }
+            input[type="submit"]:hover {
+                background: linear-gradient(45deg, #00eaff	 0%, #ff6666 100%);
+            }
+            a {
+                color: #00eaff	;
+                text-decoration: none;
+                transition: color 0.3s ease-in-out;
+            }
+            a:hover {
+                text-decoration: underline;
+                color: #ff6666;
+            }
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+            padding: 20px;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Blockchain App</h1>
+        
+        {% if username %}
+            <p>Hello, {{ username }}!</p>
+            <a href="/logout">Logout</a>
+        {% else %}
+            <p>Please <a href="/login">login</a> to continue.</p>
+        {% endif %}
+        
+        <h1>Create a New Transaction</h1>
+        <form action="/transactions/new" method="POST">
+            <!-- <label for="sender">Sender Address:</label>
+            <input type="text" id="sender" name="sender"><br><br> -->
+
+            <label for="Patient_Name">Patient Name</label>
+            <input type="text" id="Patient_Name" name="Patient_Name"><br><br>
+
+            <label for="Gender">Gender</label>
+            <input type="text" id="Gender" name="Gender"><br><br>
+
+            <label for="DOB">DOB</label>
+            <input type="text" id="DOB" name="DOB"><br><br>
+
+            <label for="Address">Address</label>
+            <input type="text" id="Address" name="Address"><br><br>
+
+            <label for="mail">Mail</label>
+            <input type="text" id="mail" name="mail"><br><br>
+
+            <label for="Mobile_Number">Mobile_Number</label>
+            <input type="text" id="Mobile_Number" name="Mobile_Number"><br><br>
+
+            <label for="Blood_Group">Blood Group</label>
+            <input type="text" id="Blood_Group" name="Blood_Group"><br><br>
+
+            <label for="Medical_History">Medical History</label>
+            <input type="text" id="Medical_History" name="Medical_History"><br><br>
+
+            <label for="Current_Illness">Current Illness</label>
+            <input type="text" id="Current_Illness" name="Current_Illness"><br><br>
+
+            <input type="submit" value="Submit Transaction">
+        </form>
+
+
+        <!-- <script>document.getElementById('submit').addEventListener('click', function() {
+            // Replace this with the desired URL
+            const url = 'https://www.educative.io';
+            window.open(url, '_blank');
+          });</script> -->
+        <!-- <script>
+            function submitForm() {
+                var form = document.getElementById("transactionForm");
+                var formData = new FormData(form);
+                var xhr = new XMLHttpRequest();
+        
+                xhr.open("POST", form.action, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 201) {
+                        var responseData = JSON.parse(xhr.responseText);
+                        var message = responseData.message;
+                        var blockIndex = responseData.index;
+        
+                        // Open a new tab with the message
+                        var newTab = window.open("", "_blank");
+                        newTab.document.write("<h1>Transaction Submitted!</h1>");
+                        newTab.document.write("<p>" + message + "</p>");
+                        newTab.document.write("<p>Transaction will be added to block " + blockIndex + "</p>");
+                    }
+                };
+        
+                xhr.send(formData);
+            }
+        </script> -->
+        
+        <h1>Mine Blockchain</h1>
+        <form action="/mine" method="GET">
+            <input type="submit" >
+        </form>
+
+        <h1>View Blockchain</h1>
+        <form action="/chain" method="GET">
+            <input type="submit" >
+        </form>
+
+        <h1>Retrieve Data</h1>
+        <form action="/retrieve" method="GET">
+            <input type="submit" >
+        </form>
+      </div>
+</body>
+</html>

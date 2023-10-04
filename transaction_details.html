@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Details</title>
+    <style>
+        body {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    background-color: #080710;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.box {
+    background-color: rgba(0, 234, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* Update button styles with the specified color */
+button {
+    background-color: #00eaff;
+    color: #080710;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Update input styles with the specified color and add margin */
+input[type="text"], input[type="password"] {
+    background-color: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+    border: none;
+    height: 50px;
+    width: calc(100% - 20px);
+    /* Adjust width and margin */
+    padding: 0 10px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+    </style>
+</head>
+<body>
+    <h1 style="color: #00eaff;">Transaction Details</h1>
+    <p><strong>Block id    :</strong> {{ index }}</p>
+    <p><strong>Agent    :</strong> {{ transaction_data.sender }}</p>
+    <p><strong>Patient Name:</strong> {{ transaction_data.Patient_Name }}</p>
+    <p><strong>Gender:</strong> {{ transaction_data.Gender }}</p>
+    <p><strong>DOB:</strong> {{ transaction_data.DOB }}</p>
+    <p><strong>Address:</strong> {{ transaction_data.Address }}</p>
+    <p><strong>Mail:</strong> {{ transaction_data.Mail }}</p>
+    <p><strong>Mobile Number:</strong> {{ transaction_data.Mobile_Number }}</p>
+    <p><strong>Blood Group:</strong> {{ transaction_data.Blood_Group }}</p>
+    <p><strong>Medical History:</strong> {{ transaction_data.Medical_History }}</p>
+    <p><strong>Current Illness:</strong> {{ transaction_data.Current_Illness }}</p>
+    
+    <!-- You can format and style the content as per your requirements -->
+</body>
+</html>
